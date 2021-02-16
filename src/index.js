@@ -45,7 +45,13 @@ const buildTens = (num) => (num ? `${NUMBERS_AS_READABLES[num * 10]}` : "");
 const buildOnes = (num) => (num ? `${NUMBERS_AS_READABLES[num]}` : "");
 
 const buildReadable = ({ thousands, hundreds, tens, ones }) =>
-    (tens * 10 + ones < 21 && tens * 10 + ones
+    (!thousands && !hundreds && !tens && !ones
+        ? [
+              buildThousands(thousands),
+              buildHundreds(hundreds),
+              NUMBERS_AS_READABLES[0],
+          ]
+        : tens * 10 + ones < 21 && tens * 10 + ones
         ? [
               buildThousands(thousands),
               buildHundreds(hundreds),
@@ -61,7 +67,4 @@ const buildReadable = ({ thousands, hundreds, tens, ones }) =>
         .filter(($) => $)
         .join(" ");
 
-module.exports = toReadable = (number) =>
-    number < 21
-        ? NUMBERS_AS_READABLES[number]
-        : buildReadable(parseNumber(number));
+module.exports = toReadable = (number) => buildReadable(parseNumber(number));
