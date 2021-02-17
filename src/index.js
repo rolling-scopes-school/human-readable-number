@@ -44,11 +44,7 @@ const buildOnes = (num) => (num ? `${NUMBERS_AS_READABLES[num]}` : "");
 
 const buildReadable = ([thousands, hundreds, tens, ones]) =>
     (!thousands && !hundreds && !tens && !ones
-        ? [
-              buildThousands(thousands),
-              buildHundreds(hundreds),
-              NUMBERS_AS_READABLES[0],
-          ]
+        ? [NUMBERS_AS_READABLES[0]]
         : tens * 10 + ones < 21 && tens * 10 + ones
         ? [
               buildThousands(thousands),
