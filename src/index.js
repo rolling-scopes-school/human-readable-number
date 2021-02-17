@@ -29,13 +29,11 @@ const NUMBERS_AS_READABLES = {
     90: "ninety",
 };
 
-const parseNumber = (number) => {
-    const [thousands, hundreds, tens, ones] = String(number)
+const parseNumber = (number) =>
+    String(number)
         .padStart(4, "0")
         .split("")
         .map((n) => +n);
-    return { thousands, hundreds, tens, ones };
-};
 
 const buildThousands = (num) =>
     num ? `${NUMBERS_AS_READABLES[num]} thousand` : "";
@@ -44,7 +42,7 @@ const buildHundreds = (num) =>
 const buildTens = (num) => (num ? `${NUMBERS_AS_READABLES[num * 10]}` : "");
 const buildOnes = (num) => (num ? `${NUMBERS_AS_READABLES[num]}` : "");
 
-const buildReadable = ({ thousands, hundreds, tens, ones }) =>
+const buildReadable = ([thousands, hundreds, tens, ones]) =>
     (!thousands && !hundreds && !tens && !ones
         ? [
               buildThousands(thousands),
