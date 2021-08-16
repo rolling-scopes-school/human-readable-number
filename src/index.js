@@ -19,6 +19,9 @@ module.exports = function toReadable(number) {
    else if (number.toString().length === 2 && number > 20) {
       return `${arrDozens[Math.floor(number / 10)]} ${arr[number % 10]}`;
    }
+   else if (number.toString().length === 3 && number % 100 > 0 && number % 100 < 20) {
+      return `${arr[Math.floor(number / 100)]} hundred ${arr[number % 100]}`;
+   }
    else {
    }
 }
