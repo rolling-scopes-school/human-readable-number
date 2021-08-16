@@ -8,8 +8,8 @@ module.exports = function toReadable(number) {
       return `${arr[Math.floor(number / 100)]} hundred`;
    }
    else if (number.toString().length === 1) {
-      return `${arr[number % 10)]
-   } `;
+      return `${arr[number % 10]}`;
+   } else {
+      return zero;
    }
-   return zero;
 }
