@@ -4,8 +4,12 @@ module.exports = function toReadable(number) {
    let i = 0;
    let readableNumber = '';
 
-   if (number.toString().length === 3) {
+   if (number.toString().length === 3 && number % 100 === 0) {
       return `${arr[Math.floor(number / 100)]} hundred`;
+   }
+   else if (number.toString().length === 1) {
+      return `${arr[number % 10)]
+   } `;
    }
    return zero;
 }
