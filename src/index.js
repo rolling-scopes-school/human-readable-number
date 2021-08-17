@@ -16,14 +16,20 @@ module.exports = function toReadable(number) {
    else if (number.toString().length === 2 && number > 9 && number < 20) {
       return `${arr[number % 100]}`;
    }
-   else if (number.toString().length === 2 && number > 20) {
+   else if (number.toString().length === 2 && number > 20 && number % 10 !== 0) {
       return `${arrDozens[Math.floor(number / 10)]} ${arr[number % 10]}`;
+   }
+   else if (number.toString().length === 2 && number > 19 && number % 10 === 0) {
+      return `${arrDozens[Math.floor(number / 10)]}`;
    }
    else if (number.toString().length === 3 && number % 100 > 0 && number % 100 < 20) {
       return `${arr[Math.floor(number / 100)]} hundred ${arr[number % 100]}`;
    }
    else if (number.toString().length === 3 && number % 100 > 19 && number % 10 === 0) {
       return `${arr[Math.floor(number / 100)]} hundred ${arrDozens[((number / 10)) % 10]}`;
+   }
+   else if (number.toString().length === 3 && number % 100 > 19 && number % 10 !== 0) {
+      return `${arr[Math.floor(number / 100)]} hundred ${arrDozens[(Math.floor((number / 10)) % 10)]} ${arr[number % 10]}`;
    }
    else {
       return 'zero';
