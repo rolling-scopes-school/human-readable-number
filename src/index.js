@@ -1,7 +1,4 @@
-//module.exports = function toReadable (number) {
-  
-//}
-function toReadable(x) {
+module.exports = function toReadable (x) {
    let a = +x / 100
    a = Math.trunc(a)
    let b = +x / 10 //24.5
@@ -97,7 +94,7 @@ function toReadable(x) {
          b1 = 'thirty'
          break
       case 4:
-         b1 = 'fourty'
+         b1 = 'forty'
          break
       case 5:
          b1 = 'fifty'
@@ -112,7 +109,7 @@ function toReadable(x) {
          b1 = 'eighty'
          break
       case 9:
-         b1 = 'ninty'
+         b1 = 'ninety'
          break
    }
 
@@ -154,7 +151,7 @@ function toReadable(x) {
 
    let rez
 
-   if (a === 0 & b === 0 & c === 0) {
+ if (a === 0 & b === 0 & c === 0) {
       rez = "zero"
    } else if (a > 0 & b === 0 & c === 0) {
       rez = a1;
@@ -166,12 +163,16 @@ function toReadable(x) {
       rez = c1;
    } else if (a === 0 & b > 1 & c >= 1) {
       rez = b1 + " " + c1
-   } else if (a > 0 & b > 0 & c >= 0) {
+   } else if (a > 0 & b > 1 & c >= 0) {
       rez = a1 + " " + b1 + " " + c1
    } else if (a > 0 & b === 0 & c >= 1) {
       rez = a1 + " " + c1
+   } else if (a === 0 & b > 0 & c > 0) {
+      rez = b1
+   } else if (a > 0 & b === 1 & c > 0) {
+      rez = a1 + " " + b1
    }
 
    return rez
 }
-console.log(toReadable(32))
+
