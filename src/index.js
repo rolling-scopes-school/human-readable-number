@@ -4,13 +4,13 @@ module.exports = function toReadable (num) {
   let bigNum = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
   if( num == 0){
-    return alert( "ZERO")
+    return  "ZERO"
   }else if(num < 10){
-     alert( smallNum[num-1]);
+    return( smallNum[num-1]);
   }else if(num > 10 && num <20){
-    alert( middleNum[num-10-1]);
+    return( middleNum[num-10-1]);
   } else if (num%10 == 0){
-    alert( bigNum[num/10-1]);
+    return( bigNum[num/10-1]);
   }else if(num >20){
     let numb = String(num).split('');
     let leng = numb.length;
@@ -29,9 +29,9 @@ module.exports = function toReadable (num) {
         }else {
           str += smallNum[numb[0] - 1] + ' hundred ' +  bigNum[numb[1] - 1] + ' ' + smallNum[numb[2] - 1]
       }
-      alert (str);
+      return (str);
     }
   }else if (num > 1000 ) {
-     alert ("Need more zero and less one thousand")
+    return ("Need more zero and less one thousand")
   }
 }
