@@ -30,7 +30,7 @@ module.exports = function toReadable (num) {
           str += smallNum[numb[0] - 1] + ' hundred '  
         }else if(numb[1] == 0){
           str += smallNum[numb[0] - 1] + ' hundred ' + smallNum[numb[2] - 1] 
-        }else if(num%%10 == 0){
+        }else if(numb[2] == 0){
           str += smallNum[numb[0] - 1] + ' hundred ' + bigNum[numb[1] - 1] 
         }else {
           str += smallNum[numb[0] - 1] + ' hundred ' +  bigNum[numb[1] - 1] + ' ' + smallNum[numb[2] - 1]
