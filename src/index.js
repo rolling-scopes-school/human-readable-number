@@ -26,6 +26,8 @@ module.exports = function toReadable (num) {
       }else if(leng == 3 ){
         if(numb[1] == 1){
           str += smallNum[numb[0] - 1] + ' hundred ' + middleNum[numb[1] - 1]        
+        }else if(if(numb[1] == 0)){
+          str += smallNum[numb[0] - 1] + ' hundred ' + smallNum[numb[1] - 1] 
         }else {
           str += smallNum[numb[0] - 1] + ' hundred ' +  bigNum[numb[1] - 1] + ' ' + smallNum[numb[2] - 1]
       }
