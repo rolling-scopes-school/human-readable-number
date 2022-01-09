@@ -4,7 +4,7 @@ module.exports = function toReadable (num) {
   let bigNum = ["ten", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
 
   if( num == 0){
-    return  "ZERO"
+    return  "zero"
   }else if(num < 10){
     return( smallNum[num-1]);
   }else if(num > 10 && num <20){
@@ -22,12 +22,16 @@ module.exports = function toReadable (num) {
       } else {
           str += bigNum[numb[0] - 1] + ' ' + smallNum[numb[1] - 1]
       }
-      alert (str);
+      return (str);
       }else if(leng == 3 ){
         if(numb[1] == 1){
-          str += smallNum[numb[0] - 1] + ' hundred ' + middleNum[numb[1] - 1]        
+          str += smallNum[numb[0] - 1] + ' hundred ' + middleNum[numb[2] - 1]        
+        }else if(numb[1] == 0 && numb[2] == 0){
+          str += smallNum[numb[0] - 1] + ' hundred '  
         }else if(numb[1] == 0){
-          str += smallNum[numb[0] - 1] + ' hundred ' + smallNum[numb[1] - 1] 
+          str += smallNum[numb[0] - 1] + ' hundred ' + smallNum[numb[2] - 1] 
+        }else if(num%%10 == 0){
+          str += smallNum[numb[0] - 1] + ' hundred ' + bigNum[numb[1] - 1] 
         }else {
           str += smallNum[numb[0] - 1] + ' hundred ' +  bigNum[numb[1] - 1] + ' ' + smallNum[numb[2] - 1]
       }
