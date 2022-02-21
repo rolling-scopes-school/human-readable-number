@@ -17,7 +17,7 @@ module.exports = function toReadable (num){
   const arrTwo=[
     'zero',
     'one',
-    'twe',
+    'twen',
     'thir',
     'four',
     'fif',
