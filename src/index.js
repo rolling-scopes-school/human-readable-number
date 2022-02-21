@@ -44,15 +44,28 @@ module.exports = function toReadable (num){
   }else if (num<1000){
     let a = Math.trunc(num*0.01)
     let b = Math.trunc((num-(a*100))*0.1)
-    let c = num-(Math.trunc(num*0.1))*10
-    let d=String(b)+String(c)
-      if (d<13){
-      d=arrOne[d]
-      return(`${arrOne[a]} ${arrThree[2]} ${d}`)
-      }else if (d<20){
-      d = `${arrTwo[d-10]}${arrThree[0]}`
-      return(`${arrOne[a]} ${arrThree[2]} ${d}`)
+    let c = num-(Math.trunc(num*0.1))*10      
+    let d
+    if (b==0 && c==0){
+      return(`${arrOne[a]} ${arrThree[2]}`)
+    }else if(b==0) {
+      return(`${arrOne[a]} ${arrThree[2]} ${arrOne[c]}`)
+    }else if (c==0){
+      d =String(b)+String(c)
+      if (d==10){
+      return(`${arrOne[a]} ${arrThree[2]} ${arrOne[d]}`)
       }else{
+      return(`${arrOne[a]} ${arrThree[2]} ${arrTwo[b]}${arrThree[1]}`)
+      }        
+    }else{
+    d =String(b)+String(c)
+    if (d<13){
+     console.log(d)
+      return(`${arrOne[a]} ${arrThree[2]} ${arrOne[d]}`)
+    }else if(d<20){
+    return(`${arrOne[a]} ${arrThree[2]} ${arrTwo[d-10]}${arrThree[0]}`)
+    }else{
       return(`${arrOne[a]} ${arrThree[2]} ${arrTwo[b]}${arrThree[1]} ${arrOne[c]}`)
       }
+    }
   }}
