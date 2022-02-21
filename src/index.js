@@ -48,11 +48,11 @@ module.exports = function toReadable (num){
     let d=String(b)+String(c)
       if (d<13){
       d=arrOne[d]
-      return(`${arrOne[a]} ${arrThree[2]}  ${d}`)
+      return(`${arrOne[a]} ${arrThree[2]} ${d}`)
       }else if (d<20){
       d = `${arrTwo[d-10]}${arrThree[0]}`
-      return(`${arrOne[a]} ${arrThree[2]}  ${d}`)
+      return(`${arrOne[a]} ${arrThree[2]} ${d}`)
       }else{
-      return(`${arrOne[a]} ${arrThree[2]}  ${arrTwo[b]}${arrThree[1]} ${arrOne[c]}`)
+      return(`${arrOne[a]} ${arrThree[2]} ${arrTwo[b]}${arrThree[1]} ${arrOne[c]}`)
       }
   }}
