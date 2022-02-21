@@ -55,7 +55,7 @@ module.exports = function toReadable (num){
         }else{
         return(`${arrOne[a]} ${arrThree[2]} and ${arrTwo[b]}${arrThree[1]} ${arrOne[c]}`)
         }
-    }else if(num<10000){
+    }/*else if(num<10000){
       let e = Math.trunc(num*0.001)  
       let a = Math.trunc(num*0.01)-(e*10)
       let b = Math.trunc((num-e*1000-a*100)*0.1)
@@ -119,4 +119,4 @@ module.exports = function toReadable (num){
       }else{
       return(`${arrOne[m]} ${arrThree[2]} and ${l} ${arrThree[3]} ${arrOne[a]} ${arrThree[2]} and ${arrTwo[b]}${arrThree[1]} ${arrOne[c]}`)
       }
-    }}
+    }*/}
