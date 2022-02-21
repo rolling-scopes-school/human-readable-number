@@ -19,7 +19,7 @@ module.exports = function toReadable (num){
     'one',
     'twen',
     'thir',
-    'four',
+    'for',
     'fif',
     'six',
     'seven',
