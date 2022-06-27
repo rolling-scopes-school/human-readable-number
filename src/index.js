@@ -39,10 +39,10 @@ module.exports = function toReadable (num) {
         90: 'ninety',
     }
 
-    if (hundredsRounded > 0 && tens === 0 && ones === 0) {
-        return resultFinal = `${numbers[hundredsRounded]} hundred`;
-    } else if (hundredsRounded === 0 && tens === 0 && ones === 0) {
+    if (hundredsRounded === 0 && tens === 0 && ones === 0) {
         return resultFinal = `zero`;
+    } else if (hundredsRounded > 0 && tens === 0 && ones === 0) {
+        return resultFinal = `${numbers[hundredsRounded]} hundred`;
     } else if (hundredsRounded > 0 && (tens > 0 || ones > 0)) {
         result = `${numbers[hundredsRounded]} hundred`;
     }
@@ -53,7 +53,7 @@ module.exports = function toReadable (num) {
         resultFinal = `${result} ${numbers[(tensRounded * 10)]}`;
     } else if ((tens * 10) < 20 && tens > 0) {
         resultFinal = `${result} ${numbers[tens * 10]}`;
-    } else if (tens = 0 && ones !==0) {
+    } else if (tens === 0 && ones !== 0) {
         resultFinal = `${numbers[ones]}`;
     }
 
