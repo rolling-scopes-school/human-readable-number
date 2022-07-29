@@ -1,5 +1,5 @@
 module.exports = function toReadable(number) {
-    let a = [
+    var a = [
         "",
         "one ",
         "two ",
@@ -21,7 +21,7 @@ module.exports = function toReadable(number) {
         "eighteen ",
         "nineteen ",
     ];
-    let b = [
+    var b = [
         "",
         "",
         "twenty",
@@ -33,8 +33,9 @@ module.exports = function toReadable(number) {
         "eighty",
         "ninety",
     ];
+
     if ((number = number.toString()).length > 9) return "overflow";
-    let n = ("000000000" + number)
+    n = ("000000000" + number)
         .substr(-9)
         .match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
     if (!n) return;
