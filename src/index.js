@@ -1,4 +1,5 @@
 module.exports = function toReadable (number) {
+    
     function simpleNumber(simpleNum){
         switch (simpleNum) {
             case 1:
