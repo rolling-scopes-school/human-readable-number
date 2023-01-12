@@ -17,16 +17,14 @@ module.exports = function toReadable(number) {
     result.push(`${numDozens[+numStr[0]]} ${numNaturel[+numStr[1]]}`);
   } else if (numStr.length === 3 && (+numStr % 100 === 0)) {
     result.push(`${numNaturel[+numStr / 100]} ${numMorTreeZero[0]}`)
-  } else if (numStr.length === 3 && (+numStr % 100 !== 0)) {
-    for (let i = numStr.length; i > 2; i--) {
-      for (let j = numStr.length - 1; j > 1; j--) {
-        for (let y = numStr.length - 2; y > 0; i--) {
-          result.push(numDozens[+numStr[0]])
-        }
-        result.push(numDozens[+numStr[1]]);
-      }
-      result.push(numNaturel[+numStr[2]]);
-    }
+  } else if ((numStr.length === 3) && (+numStr % 100 !== 0) && (String(+numStr % 100).length === 1)) {
+    result.push(`${numNaturel[Math.floor(+numStr / 100)]} ${numMorTreeZero[0]} ${numNaturel[+numStr[2]]}`);
+  } else if ((numStr.length === 3) && (+numStr % 100 !== 0) && ((String(+numStr % 100).length === 2) && (+numStr % 100 >= 10 && +numStr % 100 < 20))) {
+    result.push(`${numNaturel[+numStr[0]]} ${numMorTreeZero[0]} ${numOften[(+numStr % 100) % 10]}`);
+  } else if ((numStr.length === 3) && +numStr % 100 !== 0 && ((String(+numStr % 100).length === 2) && ((+numStr % 100) % 10 === 0))) {
+    result.push(`${numNaturel[+numStr[0]]} ${numMorTreeZero[0]} ${numDozens[(+numStr % 100) / 10]}`);
+  } else if ((numStr.length === 3) && +numStr % 100 !== 0 && ((String(+numStr % 100).length === 2) && ((+numStr % 100) % 10 !== 0))) {
+    result.push(`${numNaturel[+numStr[0]]} ${numMorTreeZero[0]} ${numDozens[+numStr[1]]} ${numNaturel[(+numStr % 100) % 10]}`);
   }
   return result.toString();
 }
