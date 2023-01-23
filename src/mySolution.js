@@ -1,14 +1,11 @@
-module.exports = function toReadable(number) {
-
-    return numbersToWords(number)
-}
-
 function numbersToWords(number) {
 
     const ones = ['', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen']
     const multiTens = ['', '', 'twenty', 'thirty', 'forty', 'fifty', 'sixty', 'seventy', 'eighty', 'ninety']
 
+    console.log(number)
     let strNum = number.toString()
+    console.log(strNum)
 
     if (number == 0) {
         return 'zero'
@@ -36,5 +33,11 @@ function numbersToWords(number) {
         } else {
             return ones[strNum[0]] + ' ' + 'hundred' + ' ' + numbersToWords(parseInt(strNum[1] + strNum[2]))
         }
+
+        // return ones[strNum[0]] + ' ' + 'hundred' + (multiTens[strNum[1]] ? ' ' + multiTens[strNum[1]] : '') + (strNum[2] ? ' ' + ones[strNum[2]] : '')
     }
 }
+
+let input = 160
+
+console.log(numbersToWords(input))
