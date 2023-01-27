@@ -86,6 +86,6 @@ module.exports = function toReadable (number) {
         if (m === 0) console.log(`${u(roundednumber)}`);
         if (1<=m<=13) console.log(`${u(roundednumber)} ${x(m)}`);
         if (14<=m<=19) console.log(`${u(roundednumber)} ${rn(m)}`);
-        if (20<=m<=99)console.log(`${u(roundednumber)} ${y(m)}`);
+        if (20<=m <=99)console.log(`${u(roundednumber)} ${y(m)}`);
      }
 }
