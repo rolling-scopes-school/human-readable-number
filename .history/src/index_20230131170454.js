@@ -1,6 +1,5 @@
 module.exports = function toReadable (number) {
         const arrayNumbers = {
-         0: 'zero',
           1: 'one',
           2: 'two', 
           3: 'three',
@@ -44,30 +43,31 @@ module.exports = function toReadable (number) {
         else if(number > 19 && number < 100) {
       
             if(num !== 0) {
-              return str = arrayDozen[dec]+ ' ' +arrayNumbers[num];
+              str = arrayDozen[dec]+ ' ' +arrayNumbers[num];
               }
               else {
-                return str = arrayDozen[dec];
+                str = arrayDozen[dec];
               }
 
       
       }
       else if(number > 99 && number < 1000) {
-        if ((number%100 > 19) && dec !==0 && num !== 0) {
+        if ((num && dec && hundred) && (number%100 > 19)) {
           return str = arrayNumbers[hundred] + ' hundred '+ arrayDozen[dec] + ' '+ arrayNumbers[num];
         }
-        else if(number%100 < 20 && (num !==0 || dec !== 0)) {
+        else if((num && dec && hundred) && (number%100 < 20) || (num === 0 && dec < 2)) {
           return str = arrayNumbers[hundred] + ' hundred '+ arrayNumbers[number%100];
         }
       
-        else if (number%100 > 19 && (num ===0 && dec !== 0)) {
+        else if (num === 0 && dec >= 2 ) {
           return str = arrayNumbers[hundred] + ' hundred '+ arrayDozen[dec];
         }
-          else if (number%100 > 19 && (num !==0 && dec === 0)) {
+          else if ( dec === 0) {
               return str = arrayNumbers[hundred] + ' hundred ' + arrayNumbers[num];
-          }
-          else if (dec === 0 && num ===0) {
-            return arrayNumbers[hundred] + ' hundred';
-          }
+           }
+        else if (dec === 0 && num ===0) {
+            return arrayNumbers[hundred] + ' hundred ';
+        }
+
         }
     }

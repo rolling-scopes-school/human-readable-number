@@ -1,6 +1,5 @@
 module.exports = function toReadable (number) {
         const arrayNumbers = {
-         0: 'zero',
           1: 'one',
           2: 'two', 
           3: 'three',
@@ -44,10 +43,10 @@ module.exports = function toReadable (number) {
         else if(number > 19 && number < 100) {
       
             if(num !== 0) {
-              return str = arrayDozen[dec]+ ' ' +arrayNumbers[num];
+              str = arrayDozen[dec]+ ' ' +arrayNumbers[num];
               }
               else {
-                return str = arrayDozen[dec];
+                str = arrayDozen[dec];
               }
 
       
@@ -67,7 +66,7 @@ module.exports = function toReadable (number) {
               return str = arrayNumbers[hundred] + ' hundred ' + arrayNumbers[num];
           }
           else if (dec === 0 && num ===0) {
-            return arrayNumbers[hundred] + ' hundred';
+            return arrayNumbers[hundred] + ' hundred ';
           }
         }
     }
