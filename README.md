@@ -25,7 +25,7 @@ Write your code in `src/index.js.
 
 ## Submit to [rs app](https://app.rs.school)
 1. Open [rs app](https://app.rs.school) and login
-2. Go to [submit task page](https://app.rs.school/course/student/auto-test?course=rs-2020-q1)
+2. Open `RS APP` and click `Auto Test`
 3. Select your task (human-readable-number)
 4. Press the submit button and enjoy
 
