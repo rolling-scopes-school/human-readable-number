@@ -1,3 +1,3 @@
-module.exports = function toReadable (number) {
-  
-}
+module.exports = function toReadable(/* number */) {
+  // your code here
+};

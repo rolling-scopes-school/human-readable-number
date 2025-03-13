@@ -1,29 +1,26 @@
 {
-  "name": "rsapp-task-template",
+  "name": "human-readable-number",
   "version": "1.0.0",
-  "description": "Template for rsapp task",
+  "description": "Human Readable Number",
   "main": "index.js",
   "scripts": {
-    "test": "mocha test",
-    "postinstall": "node postinstall.js"
-  },
-  "engines": {
-    "node": ">=16"
+    "test": "npm run lint && mocha",
+    "lint": "node node_modules/eslint/bin/eslint.js ./src",
+    "lint:fix": "node node_modules/eslint/bin/eslint.js ./src --fix"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Shastel/rsapp-task-template.git"
+    "url": "git+https://github.com/rolling-scopes-school/human-readable-number.git"
   },
   "author": "max@shas.tel",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Shastel/rsapp-task-template/issues"
-  },
-  "homepage": "https://github.com/Shastel/rsapp-task-template#readme",
-  "dependencies": {
-    "chai": "^4.2.0",
-    "colors": "^1.4.0",
-    "mocha": "^6.2.2",
-    "semver": "^6.3.0"
+  "homepage": "https://github.com/rolling-scopes-school/human-readable-number",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "mocha": "^10.8.2",
+    "prettier": "^3.5.3"
   }
 }
