@@ -9,12 +9,13 @@ Your task is to implement function `toReadable` that converts given number, to r
 
 For example:
 ```js
-toReadable(1); // Will return 'one'
-toReadable(997); //will return 'nine hundred ninety seven'
+toReadable(1);   // Will return 'one'
+toReadable(997); // will return 'nine hundred ninety seven'
 ```
 
 You can find even more examples in `test.js`
 
+**Active usage of [documentation](https://developer.mozilla.org/en-US/) is strongly recommended!**
 
 ## Prepare and test
 1. Install Node.js
@@ -30,9 +31,14 @@ You can find even more examples in `test.js`
     ```javascript
         function toReadable(/* number */)
     ```
+
+    Remove the throwing error line from function body:
+    ```javascript
+        throw new Error('Not implemented'); 
+    ```
     Implement the function by any way and verify your solution by running tests until the failed test become passed (green).
 8. Save the solution and run `npm test` in command line.
-9. You will see the number of passing tests.
+9. You will see the number of passing and pending tests.
 
 ## Submit to [rs app](https://app.rs.school/)
 1. Commit and push your solutions to your fork
@@ -66,3 +72,6 @@ $ npm run lint -- --fix
 
 **Question:** The solution in the local repository succeeds and all tests are "green", but in the application some tests don't count. What to do?<br>
 **Answer**: [Update your repository fork](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork), update the local repository from the fork, run tests and fix your solution. After fixing, resubmit your solution for testing.
+
+___
+The task based on https://github.com/rolling-scopes-school/js-assignments.

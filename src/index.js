@@ -1,3 +1,3 @@
 module.exports = function toReadable(/* number */) {
-  // your code here
+  throw new Error('Not implemented');
 };
